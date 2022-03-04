@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react'
+import { Routes, Route } from "react-router-dom";
 import { connect } from 'react-redux'
 
 import { fetchProducts } from './action'
+import List from './List';
+import Add from './Add';
 
-const ProductList = (props) => {
-    useEffect(() => {
-        console.log(props)
-        props.fetchAllProducts()
-    }, [])
-
+const Product = () => {
     return (
-        <div>ProductList</div>
+        <div className="product">
+            <Routes>
+                <Route path="list" element={<List />} />
+                <Route path="add" element={<Add />} />
+            </Routes>
+        </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products
+        products: state.products    
     }
 }
 
@@ -28,4 +31,4 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList)
+export default connect(mapStateToProps, mapDispatchToProps)(Product)

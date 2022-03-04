@@ -29,7 +29,7 @@ const Login = () => {
           <Form.Item label="Username" wrapperCol={{ offset: 1 }}>
             <Input onChange={e => handleChangeValue('name', e.target.value)}/>
             
-            {errors.name && 
+            {errors.name &&
               <div className="ant-form-item-explain-error">{errors.name.type && 'bat buoc phai nhap'}</div>
             }
           </Form.Item>

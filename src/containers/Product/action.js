@@ -8,7 +8,7 @@ export const fetchProducts = () => {
 
         dispatch({
             type: Types.FETCH_PRODUCTS,
-            payload: data
+            payload: data.products
         })
     }
 }

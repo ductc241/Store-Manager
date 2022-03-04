@@ -1,15 +1,19 @@
-import React from 'react'
-import { render } from 'react-dom';
+import { Routes, Route } from "react-router-dom";
 
-import Login from '../Login/Login';
-import Product from '../Product';
+import Admin from "../../components/manager/Dashboard";
+import Login from "../Login";
+
+import './Application.css'
 
 const Application = () => {
-    return (
-        <div className="App">
-          <Product />
-        </div>
-    )
+  return (
+      <>
+        <Routes>
+          <Route path="dashboard/*" element={<Admin />} />
+          <Route path="login" element={<Login />} />
+        </Routes>
+      </>
+    );
 }
 
 export default Application
