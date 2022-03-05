@@ -9,6 +9,7 @@ const Application = () => {
   return (
       <>
         <Routes>
+          <Route index element={<Admin />} />
           <Route path="dashboard/*" element={<Admin />} />
           <Route path="login" element={<Login />} />
         </Routes>
