@@ -1,4 +1,5 @@
-import { Table} from 'antd';
+import { Table, Button } from 'antd';
+import { Link } from "react-router-dom";
 
 const ProductList = ({ products }) => {
     const columns = [
@@ -21,7 +22,16 @@ const ProductList = ({ products }) => {
             title: 'Price',
             dataIndex: 'price',
             key: 'price',
-        }
+        },
+        {
+			title: 'Action',
+			dataIndex: 'action',
+			render: (text, record) => {
+                return (
+                    <Button type="primary" danger>Delete</Button>
+                )
+            }
+		}
     ];
 
     return (
@@ -29,6 +39,7 @@ const ProductList = ({ products }) => {
             columns={columns}
             dataSource={products} 
             rowKey={products => products._id}
+            pagination={false}
         />
     )
 }

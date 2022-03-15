@@ -1,18 +1,18 @@
 import * as Types from "./constants";
 
 const inittialState = {
-    products: [],
+    category: [],
     isLoading: false
 }
 
-const productReduce = (state = inittialState, action) => {
+const categoryReduce = (state = inittialState, action) => {
     switch(action.type) {
-        case Types.FETCH_PRODUCTS:
+        case Types.FETCH_CATEGORY:
             return {
                 ...state,
-                products: action.payload
+                category: action.payload
             };
-        case Types.SET_PRODUCTS_LOADING:
+        case Types.SET_CATEGORY_LOADING:
             return {
                 ...state,
                 isLoading: action.payload
@@ -23,4 +23,4 @@ const productReduce = (state = inittialState, action) => {
     }
 }
 
-export default productReduce
+export default categoryReduce

@@ -1,1 +1,3 @@
 export const FETCH_PRODUCTS = 'Product/FETCH_PRODUCTS';
+
+export const SET_PRODUCTS_LOADING = 'Product/SET_PRODUCTS_LOADING';
